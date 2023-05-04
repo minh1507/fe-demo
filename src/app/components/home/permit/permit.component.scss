@@ -1,0 +1,15 @@
+.quantri {
+  input {
+    height: 35px;
+  }
+  input:focus {
+    outline-color: red;
+    outline-style: solid;
+  }
+  button {
+    margin-left: 3px;
+    font-size: 12px !important;
+    height: 30px;
+    box-sizing: border-box;
+  }
+}

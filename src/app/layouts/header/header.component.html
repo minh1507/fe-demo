@@ -1,0 +1,38 @@
+<section class="header" *ngIf="isLayout">
+  <section class="container-fluid">
+    <section class="row p-0">
+      <section class="col-5 header-left">
+        <img
+          class="header-left-img"
+          src="../../../assets/header/logo.png"
+          alt="..."
+        />
+        <i (click)="closes()" class="bi bi-list header-left-icon"></i>
+      </section>
+
+      <section class="col-7 header-right">
+        <p class="hello">{{ user }}</p>
+        <section class="header-group-dropdown">
+          <i
+            class="bi bi-bell header-right-icon__1"
+            mat-raised-button
+            color="primary"
+            matBadge="1"
+            matBadgePosition="before"
+            matBadgeColor="accent"
+          ></i>
+          <i
+            class="bi bi-person-circle header-right-icon"
+            (click)="avatarBtn()"
+          ></i>
+
+          <ul class="drp" *ngIf="avatar">
+            <li (click)="logout()">Logout</li>
+          </ul>
+        </section>
+        <!-- <i class="bi bi-list header-right-icon"></i> -->
+      </section>
+    </section>
+  </section>
+  <button (click)="closes()">close</button> -->
+</section>

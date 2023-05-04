@@ -1,0 +1,120 @@
+<section class="container-fluid mt-2 quantri">
+  <mat-card>
+    <mat-card-header><h4>Tìm kiếm người dùng</h4></mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="formSearch" (ngSubmit)="onSubmit()">
+        <section class="row">
+          <section class="col-md-4 mt-2">
+            <input
+              type="text"
+              class="form-control shadow-none"
+              placeholder="Tên tài khoản"
+              aria-label="Username"
+              formControlName="username"
+            />
+          </section>
+          <section class="col-md-4 mt-2">
+            <select class="form-select shadow-none" formControlName="roleId">
+              <option value="{{ item.value }}" *ngFor="let item of role" selected>
+                {{ item.viewValue }}
+              </option>
+            </select>
+          </section>
+          <section class="col-md-4 mt-2">
+            <button type="submit" class="btn btn-primary h-100 m-0">
+              Tìm kiếm
+            </button>
+          </section>
+        </section>
+      </form>
+
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="mt-1">
+    <mat-card-header><h4>Danh sách người dùng</h4></mat-card-header>
+
+    <section class="d-flex">
+      <button
+        type="submit"
+        class="btn btn-primary"
+        mat-raised-button
+        (click)="openFormCreate()"
+      >
+        Thêm mới
+      </button>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        mat-raised-button
+        (click)="openFormUpdate()"
+      >
+        Cập nhật
+      </button>
+
+      <button
+        type="submit"
+        class="btn btn-primary"
+        mat-raised-button
+        (click)="openFormDelete()"
+      >
+        Xóa
+      </button>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        mat-raised-button
+        (click)="reload()"
+      >
+        Làm mới
+      </button>
+    </section>
+    <mat-card-content>
+      <table
+        mat-table
+        [dataSource]="user"
+        class="mat-elevation-z8 w-100 shadow-none"
+      >
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef>id.</th>
+          <td mat-cell *matCellDef="let i = index">{{ i + 1 + lowValue }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="username">
+          <th mat-header-cell *matHeaderCellDef>Tên.</th>
+          <td mat-cell *matCellDef="let element">{{ element.username }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="role">
+          <th mat-header-cell *matHeaderCellDef>Quyền hạn.</th>
+          <td mat-cell *matCellDef="let element">{{ element.role }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef>Ngày sinh.</th>
+          <td mat-cell *matCellDef="let element">{{ element.date | date:'shortDate'}}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr
+          mat-row
+          *matRowDef="let row; columns: displayedColumns"
+          class="tr"
+          (click)="show(row)"
+          [ngStyle]="{
+            'background-color': userID == row.id ? '#eeeeee' : 'unset'
+          }"
+        ></tr>
+      </table>
+    </mat-card-content>
+    <mat-card-footer
+      ><mat-paginator
+        [length]="totalUser"
+        [pageSize]="10"
+        [pageSizeOptions]="[10]"
+        (page)="getPaginatorData($event)"
+        aria-label="Select page"
+      >
+      </mat-paginator
+    ></mat-card-footer>
+  </mat-card>
+</section>

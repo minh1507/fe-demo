@@ -1,0 +1,51 @@
+<main class="main-auth">
+  <section class="card-auth row">
+    <form [formGroup]="formLogin" (ngSubmit)="onSubmit()" class="card-auth_left col-6">
+      <h1>Đăng nhập</h1>
+      <small>Đăng nhập vào tài khoản của bạn </small>
+      <section class="input-group mb-2">
+        <section class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1"><i class="bi bi-person"></i></span>
+        </section>
+        <input
+          type="text"
+          class="form-control shadow-none"
+          placeholder="Tên đăng nhập"
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+          formControlName="username"
+        />
+      </section>
+      <section class="input-group mb-3">
+        <section class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1"><i class="bi bi-lock"></i></span>
+        </section>
+        <input
+          type="password"
+          class="form-control shadow-none"
+          placeholder="Mật khẩu"
+          aria-label="Username"
+          aria-describedby="basic-addon1"
+          formControlName="password"
+        />
+      </section>
+
+      <section class="d-flex justify-content-center align-items-center">
+        <button type="submit" class="btn btn-primary">Đăng nhập</button>
+      </section>
+    </form>
+    <section class="card-auth_right col-6">
+      <h3>BAN BẢO TRÌ</h3>
+      <ol>
+        <li>Công trình đường bộ</li>
+        <li>Công trình đường thủy</li>
+        <li>Công trình đèn tín hiệu</li>
+        <li>Công trình cầu - cảng</li>
+        <li>Công trình đường sắt cắt ngang</li>
+        <li>Kế hoạch duy tu - bảo dưỡng</li>
+        <li>Quản trị hệ thống</li>
+      </ol>
+    </section>
+  </section>
+</main>
+

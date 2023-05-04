@@ -1,0 +1,49 @@
+h4 {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.input-form-quan-tri {
+  margin-left: 8px;
+}
+
+.quantri {
+  input {
+    height: 35px;
+  }
+  input:focus {
+    outline-color: red;
+    outline-style: solid;
+  }
+  button {
+    margin-left: 3px;
+    font-size: 12px !important;
+    height: 30px;
+    box-sizing: border-box;
+  }
+}
+
+.tr:hover{
+  background-color: #eeeeee;
+  cursor: pointer;
+}
+
+
+
+.fi{
+  height: 35px !important;
+}
+
+select{
+  height: 35px;
+  z-index: 9;
+}
+
+
+.hammer{
+  font-size: 1.5rem;
+  cursor: pointer;
+  .ham{
+    margin-left: 8px;
+  }
+}

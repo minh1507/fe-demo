@@ -1,0 +1,14 @@
+@media screen and (max-width: 200px) {
+  .err{
+    display: none;
+  }
+  .err-reverse{
+    display: grid !important;
+    place-items: center;
+    height: 100vh;
+  }
+}
+
+.err-reverse{
+  display: none;
+}
